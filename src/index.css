@@ -1,0 +1,137 @@
+/* reset
+---------- ---------- ---------- ---------- ---------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  color: #333;
+  /* background-color: #333; */
+}
+
+fieldset,
+img {
+  border: 0 none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* invisible
+---------- ---------- ---------- ---------- ---------- */
+.invisible {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* outer_cell
+---------- ---------- ---------- ---------- ---------- */
+.outer_cell {
+  display: table;
+  height: 100%;
+}
+
+.inner_cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* group_half
+---------- ---------- ---------- ---------- ---------- */
+.group_half {
+  font-size: 0;
+}
+
+.inner_half {
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+/* inner_global
+---------- ---------- ---------- ---------- ---------- */
+.inner_global {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* icon
+---------- ---------- ---------- ---------- ---------- */
+.icon_global {
+  display: inline-block;
+  overflow: hidden;
+  font-size: 1px;
+  line-height: 0;
+  color: transparent;
+  background-image: url(/images/common/icon_global.png);
+  background-repeat: no-repeat;
+  background-size: 160px auto;
+  vertical-align: middle;
+}
+
+/* button
+---------- ---------- ---------- ---------- ---------- */
+.button_global {
+  border: 0 none;
+  box-sizing: border-box;
+  line-height: 1;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button_common {
+  width: 100%;
+  padding: 12px 12px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  background-color: #000;
+}
+
+.button_utility .icon_global {
+  width: 30px;
+  height: 30px;
+}
+
+.button_search .icon_global {
+  background-position: -1000px -1000px;
+}
+
+.button_hamburger .icon_global {
+  background-position: 0 0;
+}
+
+/* slick
+---------- ---------- ---------- ---------- ---------- */
+
+.container .slick-slider {
+  margin-right: -12px;
+  margin-bottom: 0;
+  margin-left: -12px;
+}
+
+.container .slick-slide {
+  margin: 0 12px;
+  box-sizing: border-box;
+}
