@@ -7,15 +7,17 @@ const Styled = {}
 Styled.contents = styled.section``
 
 const Contents = (props) => {
-  const { title } = props
+  // console.log('components → common → [Contents.js] → props: ', props)
+
+  const { attribute } = props
 
   return (
     <>
-      <section className="contents">
-        {title && (
+      <section className={attribute && attribute.className ? `contents ${attribute.className}` : 'contents'}>
+        {attribute && attribute.title && (
           <h3 className="title_contents">
-            <Link to={`/talk/list`} className="link_contents">
-              {title}
+            <Link to={{ pathname: `/talk/list`, query: { title: attribute.title } }} className="link_contents">
+              {attribute.title}
             </Link>
           </h3>
         )}

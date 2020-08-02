@@ -11,14 +11,10 @@ const Caption = (props) => {
   return (
     <figcaption className={`caption_${attribute.design}`}>
       {attribute.design === 'middle' ? (
-        <div className="outer_cell">
-          <div className="inner_cell">
-            <div className="untitled_common">
-              <span className={`text_${attribute.design}`}>{attribute.information.description}</span>
-              <strong className={`subject_${attribute.design}`}>{attribute.information.name}</strong>
-              <p className={`description_${attribute.design}`}>{attribute.information.place}</p>
-            </div>
-          </div>
+        <div className="untitled_common">
+          <strong className={`subject_${attribute.design}`}>{attribute.information.name}</strong>
+          <span className={`text_${attribute.design}`}>{attribute.information.description}</span>
+          {/* <p className={`description_${attribute.design}`}>{attribute.information.place}</p> */}
         </div>
       ) : (
         <>

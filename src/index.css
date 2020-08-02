@@ -109,22 +109,44 @@ a {
   background-color: #000;
 }
 
+.button_hamburger .icon_global {
+  width: 30px;
+  height: 30px;
+}
+
 .button_utility .icon_global {
   width: 30px;
   height: 30px;
 }
 
-.button_search .icon_global {
-  background-position: -1000px -1000px;
+.button_login .icon_global {
+  background-position: -70px 0;
+}
+
+.button_register .icon_global {
+  background-position: -105px -35px;
 }
 
 .button_hamburger .icon_global {
   background-position: 0 0;
 }
 
+.button_close .icon_global {
+  background-position: -35px -35px;
+}
+
+.link_common1 {
+  display: block;
+  padding: 12px 12px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+}
+
 /* slick
 ---------- ---------- ---------- ---------- ---------- */
-
 .container .slick-slider {
   margin-right: -12px;
   margin-bottom: 0;

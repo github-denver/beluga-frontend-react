@@ -45,7 +45,7 @@ const Footer = () => {
           <dt>팩스</dt>
           <dd>82-2-0000-0000</dd>
           <dt>문의</dt>
-          <dd>administer@beluga.com</dd>
+          <dd>administer</dd>
         </dl>
 
         <p className="text_copyright">ⓒ Beluga Corp.</p>

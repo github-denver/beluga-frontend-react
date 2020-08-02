@@ -48,7 +48,7 @@ const Lodge = (props) => {
 
   return (
     <>
-      <Contents title={`${description[0].name} (${description[0].description})`}>
+      <Contents attribute={{ title: `${description[0].name} (${description[0].description})` }}>
         <figure className="thumbnail_common">
           <Slick attribute={{ design: 'slider', information: description[0] }} />
 

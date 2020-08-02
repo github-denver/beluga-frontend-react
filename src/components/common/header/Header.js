@@ -14,8 +14,8 @@ const Header = ({ user, logout }) => {
   const onOpen = (event) => {
     event.preventDefault()
 
-    console.log('const onOpen = () => { .. } → open: ', open)
-    console.log('const onOpen = () => { .. } → !open: ', !open)
+    // console.log('components → common → header → [Header.js] → open: ', open)
+    // console.log('components → common → header → [Header.js] → !open: ', !open)
 
     if (!open) {
       setOpen(true)
@@ -25,7 +25,7 @@ const Header = ({ user, logout }) => {
   }
 
   useEffect(() => {
-    console.log('useEffect(() => { .. } → open: ', open)
+    // console.log('components → common → header → [Header.js] → open: ', open)
   }, [open])
 
   return (
@@ -36,9 +36,9 @@ const Header = ({ user, logout }) => {
         </Link>
       </h1>
 
-      <Utility onOpen={onOpen} />
+      <Utility user={user} logout={logout} onOpen={onOpen} />
 
-      <Hamburger open={open} />
+      <Hamburger user={user} onOpen={onOpen} open={open} />
     </header>
   )
 }

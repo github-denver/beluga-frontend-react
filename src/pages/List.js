@@ -4,7 +4,13 @@ import Contents from '../components/common/Contents'
 import Slick from '../containers/slick/Slick'
 import Footer from '../components/common/Footer'
 
-const List = () => {
+const List = (props) => {
+  // const { location } = props
+  // console.log('pages → [List.js] → props: ', props)
+
+  // const title = location.query.title
+  // console.log('pages → [List.js] → title: ', title)
+
   return (
     <>
       <Header />
@@ -12,7 +18,7 @@ const List = () => {
       <section className="container">
         <h2 className="invisible">벨루가 (Beluga) 본문 영역</h2>
 
-        <Contents title="우리도 호캉스 갈까?">
+        <Contents attribute={{ title: 'TEST' }}>
           <Slick attribute={{ design: 'information', category: 'lodge' }} />
         </Contents>
       </section>

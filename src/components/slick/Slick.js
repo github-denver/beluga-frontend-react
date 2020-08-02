@@ -16,14 +16,14 @@ const Slick = (props) => {
   if (error === null) {
     if (error) {
       if (error.response && error.response.status === 404) {
-        // console.group('components → [Slick.js]')
+        // console.group('components → slick → [Slick.js]')
         // console.log('존재하지 않는 포스트입니다.')
         // console.groupEnd()
 
         return <p>존재하지 않는 포스트입니다.</p>
       }
 
-      // console.group('components → [Slick.js]')
+      // console.group('components → slick → [Slick.js]')
       // console.log('에러가 발생했어요!')
       // console.groupEnd()
 
@@ -31,7 +31,7 @@ const Slick = (props) => {
     }
 
     if (loading || !attribute.description || !attribute.information) {
-      // console.group('components → [Slick.js]')
+      // console.group('components → slick → [Slick.js]')
       // console.log('읽어들이는 중이거나 아직 포스트 데이터가 존재하지 않을 때')
       // console.groupEnd()
 
@@ -39,7 +39,7 @@ const Slick = (props) => {
     }
 
     if (!attribute.description || !attribute.information) {
-      // console.group('components → [Slick.js]')
+      // console.group('components → slick → [Slick.js]')
       // console.log('포스트 목록이 존재하지 않을 때')
       // console.groupEnd()
 

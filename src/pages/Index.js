@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/common/header/Header'
+import Header from '../containers/common/header/Header'
 import Hero from '../containers/slick/Hero'
 import Contents from '../components/common/Contents'
 import Slick from '../containers/slick/Slick'
@@ -15,17 +15,17 @@ const Index = () => {
 
         <Hero attribute={{ category: 'hero' }} />
 
-        {/* <Contents title="이벤트">
+        <Contents attribute={{ title: '다음엔 어디 갈까? 고민은 이제 그만!' }}>
           <Slick attribute={{ design: 'middle', category: 'lodge' }} />
-        </Contents> */}
+        </Contents>
 
-        <Contents title="우리도 호캉스 갈까?">
+        <Contents attribute={{ title: '우리도 호캉스 갈까?' }}>
           <Slick attribute={{ design: 'information', category: 'lodge' }} />
         </Contents>
 
-        {/* <Contents title="매거진">
+        <Contents attribute={{ title: '매거진' }}>
           <Slick attribute={{ design: 'gallery', category: 'lodge' }} />
-        </Contents> */}
+        </Contents>
       </section>
 
       <Footer />

@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/common/header/Header'
+import Header from '../containers/common/header/Header'
 import Lodge from '../containers/Lodge'
 import Room from '../containers/Room'
 import Footer from '../components/common/Footer'
