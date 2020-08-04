@@ -1,28 +1,53 @@
 import React, { useEffect } from 'react'
 import Room from '../components/Room'
+import Room2 from '../components/Room2'
 import { useSelector, useDispatch } from 'react-redux'
-import { readRoomDescription, readRoomInformation } from '../modules/room/read'
+import { roomReadContents, roomReadInformation } from '../modules/room/read'
+import { benefitReadContents, benefitReadInformation } from '../modules/benefit/read'
 import { withRouter } from 'react-router-dom'
 
 const Result = (props) => {
+  // console.log('containers → [Room.js] → props: ', props)
+
   const { location, category, design } = props
 
-  const { description, information, error, loading } = useSelector(({ readRoom, loading }) => {
+  const room = useSelector(({ roomRead, loading }) => {
     const data = {}
 
-    if (readRoom.description !== null) {
-      data.description = readRoom.description.result
+    if (roomRead.contents !== null) {
+      data.contents = roomRead.contents.result
     }
 
-    if (readRoom.information !== null) {
-      data.information = readRoom.information.result
+    if (roomRead.information !== null) {
+      data.information = roomRead.information.result
     }
 
     return {
-      description: data.description,
+      contents: data.contents,
       information: data.information,
-      error: readRoom.error,
-      loading: loading['readRoom/DESCRIPTION_READ_LODGE']
+      error: roomRead.error,
+      loading: loading['roomRead/LODGE_READ_CONTENTS']
+    }
+  })
+
+  // console.log('containers → [Room.js] → room: ', room)
+
+  const benefit = useSelector(({ benefitRead, loading }) => {
+    const data = {}
+
+    if (benefitRead.contents !== null) {
+      data.contents = benefitRead.contents.result
+    }
+
+    if (benefitRead.information !== null) {
+      data.information = benefitRead.information.result
+    }
+
+    return {
+      contents: data.contents,
+      information: data.information,
+      error: benefitRead.error,
+      loading: loading['benefitRead/DESCRIPTION_READ_BENEFIT']
     }
   })
 
@@ -31,11 +56,34 @@ const Result = (props) => {
   useEffect(() => {
     const number = location.pathname.split('/').splice(-1)[0] === '' ? 1 : location.pathname.split('/').splice(-1)[0]
 
-    dispatch(readRoomDescription({ category, number }))
-    dispatch(readRoomInformation({ category, number }))
+    if (category === 'lodge') {
+      dispatch(roomReadContents({ category: 'room', number }))
+      dispatch(roomReadInformation({ category: 'room', number }))
+    }
+
+    if (category === 'benefit') {
+      dispatch(benefitReadContents({ category, number }))
+      dispatch(benefitReadInformation({ category, number }))
+    }
   }, [dispatch, location.pathname, category])
 
-  return <Room description={description} information={information} error={error} loading={loading} design={design} category={category} />
+  return (
+    <>
+      {category === 'lodge' && (
+        <Room error={room.error} loading={room.loading} design={design} category={category} description={room.contents} information={room.information} />
+      )}
+      {category === 'benefit' && (
+        <Room2
+          error={benefit.error}
+          loading={benefit.loading}
+          design={design}
+          category={category}
+          description={benefit.contents}
+          information={benefit.information}
+        />
+      )}
+    </>
+  )
 }
 
 export default withRouter(Result)

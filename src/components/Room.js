@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Contents from './common/Contents'
 import Slick from '../components/slick/Slick'
@@ -11,8 +11,6 @@ Styled.room = styled.section``
 
 const Room = (props) => {
   const { description, error, loading, information, category } = props
-
-  useEffect(() => {})
 
   if (error) {
     if (error.response && error.response.status === 404) {

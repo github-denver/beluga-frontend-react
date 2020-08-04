@@ -3,45 +3,45 @@ import createRequestSaga, { createRequestActionTypes } from '../../lib/createReq
 import { takeLatest } from 'redux-saga/effects'
 import * as api from '../../lib/api/list'
 
-const [DESCRIPTION_LIST_LODGE, DESCRIPTION_LIST_LODGE_SUCCESS, DESCRIPTION_LIST_LODGE_FAILURE] = createRequestActionTypes('listLodge/DESCRIPTION_LIST_LODGE')
-const [INFORMATION_LIST_LODGE, INFORMATION_LIST_LODGE_SUCCESS, INFORMATION_LIST_LODGE_FAILURE] = createRequestActionTypes('listLodge/INFORMATION_LIST_LODGE')
+const [LODGE_LIST_CONTENTS, LODGE_LIST_CONTENTS_SUCCESS, LODGE_LIST_CONTENTS_FAILURE] = createRequestActionTypes('lodgeList/LODGE_LIST_CONTENTS')
+const [LODGE_LIST_INFORMATION, LODGE_LIST_INFORMATION_SUCCESS, LODGE_LIST_INFORMATION_FAILURE] = createRequestActionTypes('lodgeList/LODGE_LIST_INFORMATION')
 
-export const listLodgeDescription = createAction(DESCRIPTION_LIST_LODGE, ({ category, number }) => ({ category, number }))
-export const listLodgeInformation = createAction(INFORMATION_LIST_LODGE, ({ category, number }) => ({ category, number }))
+export const lodgeListContents = createAction(LODGE_LIST_CONTENTS, ({ category, number }) => ({ category, number }))
+export const lodgeListInformation = createAction(LODGE_LIST_INFORMATION, ({ category, number }) => ({ category, number }))
 
-const listLodgeDescriptionSaga = createRequestSaga(DESCRIPTION_LIST_LODGE, api.listDescription)
-const listLodgeInformationSaga = createRequestSaga(INFORMATION_LIST_LODGE, api.listInformation)
+const lodgeListContentsSaga = createRequestSaga(LODGE_LIST_CONTENTS, api.listDescription)
+const lodgeListInformationSaga = createRequestSaga(LODGE_LIST_INFORMATION, api.listInformation)
 
-export function* listLodgeSaga() {
-  yield takeLatest(DESCRIPTION_LIST_LODGE, listLodgeDescriptionSaga)
-  yield takeLatest(INFORMATION_LIST_LODGE, listLodgeInformationSaga)
+export function* lodgeListSaga() {
+  yield takeLatest(LODGE_LIST_CONTENTS, lodgeListContentsSaga)
+  yield takeLatest(LODGE_LIST_INFORMATION, lodgeListInformationSaga)
 }
 
 const initialState = {
-  description: null,
+  contents: null,
   information: null,
   error: null
 }
 
-const listLodge = handleActions(
+const lodgeList = handleActions(
   {
-    [DESCRIPTION_LIST_LODGE_SUCCESS]: (state, { payload: description }) => {
+    [LODGE_LIST_CONTENTS_SUCCESS]: (state, { payload: contents }) => {
       return {
         ...state,
-        description
+        contents
       }
     },
-    [DESCRIPTION_LIST_LODGE_FAILURE]: (state, { payload: error }) => ({
+    [LODGE_LIST_CONTENTS_FAILURE]: (state, { payload: error }) => ({
       ...state,
       error: error
     }),
-    [INFORMATION_LIST_LODGE_SUCCESS]: (state, { payload: information }) => {
+    [LODGE_LIST_INFORMATION_SUCCESS]: (state, { payload: information }) => {
       return {
         ...state,
         information
       }
     },
-    [INFORMATION_LIST_LODGE_FAILURE]: (state, { payload: error }) => ({
+    [LODGE_LIST_INFORMATION_FAILURE]: (state, { payload: error }) => ({
       ...state,
       error: error
     })
@@ -49,4 +49,4 @@ const listLodge = handleActions(
   initialState
 )
 
-export default listLodge
+export default lodgeList

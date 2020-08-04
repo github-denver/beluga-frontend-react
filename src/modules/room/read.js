@@ -3,45 +3,45 @@ import createRequestSaga, { createRequestActionTypes } from '../../lib/createReq
 import { takeLatest } from 'redux-saga/effects'
 import * as api from '../../lib/api/read'
 
-const [DESCRIPTION_READ_ROOM, DESCRIPTION_READ_ROOM_SUCCESS, DESCRIPTION_READ_ROOM_FAILURE] = createRequestActionTypes('readRoom/DESCRIPTION_READ_ROOM')
-const [INFORMATION_READ_ROOM, INFORMATION_READ_ROOM_SUCCESS, INFORMATION_READ_ROOM_FAILURE] = createRequestActionTypes('readRoom/INFORMATION_READ_ROOM')
+const [ROOM_READ_CONTENTS, ROOM_READ_CONTENTS_SUCCESS, ROOM_READ_CONTENTS_FAILURE] = createRequestActionTypes('roomRead/ROOM_READ_CONTENTS')
+const [ROOM_READ_INFORMATION, ROOM_READ_INFORMATION_SUCCESS, ROOM_READ_INFORMATION_FAILURE] = createRequestActionTypes('roomRead/ROOM_READ_INFORMATION')
 
-export const readRoomDescription = createAction(DESCRIPTION_READ_ROOM, ({ category, number }) => ({ category, number }))
-export const readRoomInformation = createAction(INFORMATION_READ_ROOM, ({ category, number }) => ({ category, number }))
+export const roomReadContents = createAction(ROOM_READ_CONTENTS, ({ category, number }) => ({ category, number }))
+export const roomReadInformation = createAction(ROOM_READ_INFORMATION, ({ category, number }) => ({ category, number }))
 
-const readRoomDescriptionSaga = createRequestSaga(DESCRIPTION_READ_ROOM, api.readDescription)
-const readRoomInformationSaga = createRequestSaga(INFORMATION_READ_ROOM, api.readInformation)
+const roomReadContentsSaga = createRequestSaga(ROOM_READ_CONTENTS, api.readDescription)
+const roomReadInformationSaga = createRequestSaga(ROOM_READ_INFORMATION, api.readInformation)
 
-export function* readRoomSaga() {
-  yield takeLatest(DESCRIPTION_READ_ROOM, readRoomDescriptionSaga)
-  yield takeLatest(INFORMATION_READ_ROOM, readRoomInformationSaga)
+export function* roomReadSaga() {
+  yield takeLatest(ROOM_READ_CONTENTS, roomReadContentsSaga)
+  yield takeLatest(ROOM_READ_INFORMATION, roomReadInformationSaga)
 }
 
 const initialState = {
-  description: null,
+  contents: null,
   information: null,
   error: null
 }
 
-const readRoom = handleActions(
+const roomRead = handleActions(
   {
-    [DESCRIPTION_READ_ROOM_SUCCESS]: (state, { payload: description }) => {
+    [ROOM_READ_CONTENTS_SUCCESS]: (state, { payload: contents }) => {
       return {
         ...state,
-        description
+        contents
       }
     },
-    [DESCRIPTION_READ_ROOM_FAILURE]: (state, { payload: error }) => ({
+    [ROOM_READ_CONTENTS_FAILURE]: (state, { payload: error }) => ({
       ...state,
       error: error
     }),
-    [INFORMATION_READ_ROOM_SUCCESS]: (state, { payload: information }) => {
+    [ROOM_READ_INFORMATION_SUCCESS]: (state, { payload: information }) => {
       return {
         ...state,
         information
       }
     },
-    [INFORMATION_READ_ROOM_FAILURE]: (state, { payload: error }) => ({
+    [ROOM_READ_INFORMATION_FAILURE]: (state, { payload: error }) => ({
       ...state,
       error: error
     })
@@ -49,4 +49,4 @@ const readRoom = handleActions(
   initialState
 )
 
-export default readRoom
+export default roomRead

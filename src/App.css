@@ -70,6 +70,10 @@
   margin-top: 24px;
 }
 
+.contents .group_loading {
+  margin-top: 12px;
+}
+
 /* area_utility
 ---------- ---------- ---------- ---------- ---------- */
 .area_utility {
@@ -877,3 +881,28 @@
 .welcome .text_contents {
   text-align: center;
 }
+
+/* group_loading
+---------- ---------- ---------- ---------- ---------- */
+.group_loading .thumbnail_loading {
+  padding-top: 56.25%;
+  background-color: #f1f1f1;
+}
+
+/* .group_loading .caption_loading {
+  margin-top: 24px;
+}
+
+.group_loading .subject_loading {
+  display: block;
+  height: 20px;
+  margin: 0 12px;
+  background-color: #f1f1f1;
+}
+
+.group_loading .text_loading {
+  display: block;
+  height: 20px;
+  margin: 4px 12px 0;
+  background-color: #f1f1f1;
+} */

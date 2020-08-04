@@ -4,7 +4,10 @@ import Lodge from '../containers/Lodge'
 import Room from '../containers/Room'
 import Footer from '../components/common/Footer'
 
-const Index = () => {
+const Index = ({ location }) => {
+  const category = location.pathname.split('/').splice(1)[0] !== '' ? location.pathname.split('/').splice(1)[0] : 1
+  // console.log('pages → [Read.js] → category: ', category)
+
   return (
     <>
       <Header />
@@ -12,9 +15,9 @@ const Index = () => {
       <section className="container">
         <h2 className="invisible">벨루가 (Beluga) 본문 영역</h2>
 
-        <Lodge category="lodge" />
+        <Lodge category={category} />
 
-        <Room category="room" />
+        <Room category={category} />
       </section>
 
       <Footer />

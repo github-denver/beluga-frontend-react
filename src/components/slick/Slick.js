@@ -3,12 +3,15 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Caption from '../Caption'
 import Information from '../Information'
+import Loading from '../common/Loading'
 
 const Styled = {}
 
 Styled.slick = styled.section``
 
 const Slick = (props) => {
+  // console.log('components → [Slick.js] → props: ', props)
+
   const { attribute, error, loading } = props
 
   useEffect(() => {})
@@ -35,7 +38,7 @@ const Slick = (props) => {
       // console.log('읽어들이는 중이거나 아직 포스트 데이터가 존재하지 않을 때')
       // console.groupEnd()
 
-      return null
+      return <Loading />
     }
 
     if (!attribute.description || !attribute.information) {
@@ -54,9 +57,9 @@ const Slick = (props) => {
           {attribute.description.map((currentValue, index) => {
             return (
               <div className="box_common" key={index}>
-                <Link to={`/talk/read/${currentValue.number}`} className="link_common">
+                <Link to={`/benefit/read/${currentValue.number}`} className="link_common">
                   <figure className="thumbnail_common">
-                    <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/seoul/common/${currentValue.thumbnail})` }}></div>
+                    <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/${currentValue.thumbnail})` }}></div>
 
                     <Caption
                       attribute={{
@@ -77,9 +80,9 @@ const Slick = (props) => {
           {attribute.description.map((currentValue, index) => {
             return (
               <div className="box_common" key={index}>
-                <Link to={`/talk/read/${currentValue.number}`} className="link_common">
+                <Link to={`/lodge/read/${currentValue.number}`} className="link_common">
                   <figure className="thumbnail_common">
-                    <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/seoul/common/${currentValue.thumbnail})` }}></div>
+                    <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/${currentValue.thumbnail})` }}></div>
 
                     <Caption
                       attribute={{
@@ -108,9 +111,9 @@ const Slick = (props) => {
           {attribute.description.map((currentValue, index) => {
             return (
               <div className="box_common" key={index}>
-                <Link to={`/talk/read/${currentValue.number}`} className="link_common">
+                <Link to={`/lodge/read/${currentValue.number}`} className="link_common">
                   <figure className="thumbnail_common">
-                    <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/seoul/common/${currentValue.thumbnail})` }}></div>
+                    <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/${currentValue.thumbnail})` }}></div>
 
                     <Caption
                       attribute={{
@@ -139,7 +142,7 @@ const Slick = (props) => {
         <div className="slick">
           <div className="box_common">
             <Link to="#" className="link_common">
-              <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/seoul/common/${attribute.information.thumbnail})` }}></div>
+              <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/${attribute.information.thumbnail})` }}></div>
             </Link>
           </div>
         </div>

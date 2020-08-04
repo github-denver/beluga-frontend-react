@@ -1,28 +1,50 @@
 import React, { useEffect } from 'react'
 import Lodge from '../components/Lodge'
 import { useSelector, useDispatch } from 'react-redux'
-import { readLodgeDescription, readLodgeInformation } from '../modules/lodge/read'
+import { lodgeReadContents, lodgeReadInformation } from '../modules/lodge/read'
+import { benefitReadContents, benefitReadInformation } from '../modules/benefit/read'
 import { withRouter } from 'react-router-dom'
 
 const Result = (props) => {
+  // console.log('containers → [Lodge.js] → props: ', props)
+
   const { location, category } = props
 
-  const { description, information, error, loading } = useSelector(({ readLodge, loading }) => {
+  const lodge = useSelector(({ lodgeRead, loading }) => {
     const data = {}
 
-    if (readLodge.description !== null) {
-      data.description = readLodge.description.result
+    if (lodgeRead.contents !== null) {
+      data.contents = lodgeRead.contents.result
     }
 
-    if (readLodge.information !== null) {
-      data.information = readLodge.information.result
+    if (lodgeRead.information !== null) {
+      data.information = lodgeRead.information.result
     }
 
     return {
-      description: data.description,
+      contents: data.contents,
       information: data.information,
-      error: readLodge.error,
-      loading: loading['readLodge/DESCRIPTION_READ_LODGE']
+      error: lodgeRead.error,
+      loading: loading['lodgeRead/LODGE_READ_CONTENTS']
+    }
+  })
+
+  const benefit = useSelector(({ benefitRead, loading }) => {
+    const data = {}
+
+    if (benefitRead.contents !== null) {
+      data.contents = benefitRead.contents.result
+    }
+
+    if (benefitRead.information !== null) {
+      data.information = benefitRead.information.result
+    }
+
+    return {
+      contents: data.contents,
+      information: data.information,
+      error: benefitRead.error,
+      loading: loading['benefitRead/BENEFIT_READ_CONTENTS']
     }
   })
 
@@ -31,11 +53,27 @@ const Result = (props) => {
   useEffect(() => {
     const number = location.pathname.split('/').splice(-1)[0] === '' ? 1 : location.pathname.split('/').splice(-1)[0]
 
-    dispatch(readLodgeDescription({ category, number }))
-    dispatch(readLodgeInformation({ category, number }))
+    if (category === 'lodge') {
+      dispatch(lodgeReadContents({ category, number }))
+      dispatch(lodgeReadInformation({ category, number }))
+    }
+
+    if (category === 'benefit') {
+      dispatch(benefitReadContents({ category: category, number }))
+      dispatch(benefitReadInformation({ category: category, number }))
+    }
   }, [dispatch, location.pathname, category])
 
-  return <Lodge description={description} information={information} error={error} loading={loading} category={category} />
+  return (
+    <>
+      {category === 'lodge' && (
+        <Lodge error={lodge.error} loading={lodge.loading} category={category} description={lodge.contents} information={lodge.information} />
+      )}
+      {category === 'benefit' && (
+        <Lodge error={benefit.error} loading={benefit.loading} category={category} description={benefit.contents} information={benefit.information} />
+      )}
+    </>
+  )
 }
 
 export default withRouter(Result)

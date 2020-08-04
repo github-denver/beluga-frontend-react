@@ -4,14 +4,29 @@ import loading from './loading'
 import authorization, { authorizationSaga } from './authorization'
 import user, { userSaga } from './user'
 import hero, { heroSaga } from './hero/list'
-import listLodge, { listLodgeSaga } from './lodge/list'
-import readLodge, { readLodgeSaga } from './lodge/read'
-import readRoom, { readRoomSaga } from './room/read'
+import lodgeList, { lodgeListSaga } from './lodge/list'
+import lodgeRead, { lodgeReadSaga } from './lodge/read'
+import roomRead, { roomReadSaga } from './room/read'
 
-const rootReducer = combineReducers({ loading, authorization, user, hero, listLodge, readLodge, readRoom })
+import benefitRead, { benefitReadSaga } from './benefit/read'
+
+import benefitList, { benefitListSaga } from './benefit/list'
+import readBenefit2, { readBenefitSaga2 } from './benefit/read2'
+
+const rootReducer = combineReducers({ loading, authorization, user, hero, lodgeList, lodgeRead, roomRead, benefitList, benefitRead, readBenefit2 })
 
 export function* rootSaga() {
-  yield all([authorizationSaga(), userSaga(), heroSaga(), listLodgeSaga(), readLodgeSaga(), readRoomSaga()])
+  yield all([
+    authorizationSaga(),
+    userSaga(),
+    heroSaga(),
+    lodgeListSaga(),
+    lodgeReadSaga(),
+    roomReadSaga(),
+    benefitListSaga(),
+    benefitReadSaga(),
+    readBenefitSaga2()
+  ])
 }
 
 export default rootReducer

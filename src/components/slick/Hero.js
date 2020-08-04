@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import Loading from '../common/Loading'
 
 const $ = window.$
 
@@ -44,7 +45,7 @@ const Hero = (props) => {
     // console.log('읽어들이는 중이거나 아직 포스트 데이터가 존재하지 않을 때')
     // console.groupEnd()
 
-    return null
+    return <Loading />
   }
 
   if (!hero) {
@@ -62,7 +63,7 @@ const Hero = (props) => {
           hero.map((currentValue, index) => {
             return (
               <Link to="#" key={index}>
-                <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/seoul/common/${currentValue.thumbnail})` }}>
+                <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/${currentValue.thumbnail})` }}>
                   <div className="group_dimmed">
                     <strong className="subject_dimmed">{currentValue.subject}</strong>
                     <span className="text_dimmed">{currentValue.description}</span>

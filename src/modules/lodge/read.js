@@ -3,45 +3,45 @@ import createRequestSaga, { createRequestActionTypes } from '../../lib/createReq
 import { takeLatest } from 'redux-saga/effects'
 import * as api from '../../lib/api/read'
 
-const [DESCRIPTION_READ_LODGE, DESCRIPTION_READ_LODGE_SUCCESS, DESCRIPTION_READ_LODGE_FAILURE] = createRequestActionTypes('readLodge/DESCRIPTION_READ_LODGE')
-const [INFORMATION_READ_LODGE, INFORMATION_READ_LODGE_SUCCESS, INFORMATION_READ_LODGE_FAILURE] = createRequestActionTypes('readLodge/INFORMATION_READ_LODGE')
+const [LODGE_READ_CONTENTS, LODGE_READ_CONTENTS_SUCCESS, LODGE_READ_CONTENTS_FAILURE] = createRequestActionTypes('lodgeRead/LODGE_READ_CONTENTS')
+const [LODGE_READ_INFORMATION, LODGE_READ_INFORMATION_SUCCESS, LODGE_READ_INFORMATION_FAILURE] = createRequestActionTypes('lodgeRead/LODGE_READ_INFORMATION')
 
-export const readLodgeDescription = createAction(DESCRIPTION_READ_LODGE, ({ category, number }) => ({ category, number }))
-export const readLodgeInformation = createAction(INFORMATION_READ_LODGE, ({ category, number }) => ({ category, number }))
+export const lodgeReadContents = createAction(LODGE_READ_CONTENTS, ({ category, number }) => ({ category, number }))
+export const lodgeReadInformation = createAction(LODGE_READ_INFORMATION, ({ category, number }) => ({ category, number }))
 
-const readLodgeDescriptionSaga = createRequestSaga(DESCRIPTION_READ_LODGE, api.readDescription)
-const readLodgeInformationSaga = createRequestSaga(INFORMATION_READ_LODGE, api.readInformation)
+const lodgeReadContentsSaga = createRequestSaga(LODGE_READ_CONTENTS, api.readDescription)
+const lodgeReadInformationSaga = createRequestSaga(LODGE_READ_INFORMATION, api.readInformation)
 
-export function* readLodgeSaga() {
-  yield takeLatest(DESCRIPTION_READ_LODGE, readLodgeDescriptionSaga)
-  yield takeLatest(INFORMATION_READ_LODGE, readLodgeInformationSaga)
+export function* lodgeReadSaga() {
+  yield takeLatest(LODGE_READ_CONTENTS, lodgeReadContentsSaga)
+  yield takeLatest(LODGE_READ_INFORMATION, lodgeReadInformationSaga)
 }
 
 const initialState = {
-  description: null,
+  contents: null,
   information: null,
   error: null
 }
 
-const readLodge = handleActions(
+const lodgeRead = handleActions(
   {
-    [DESCRIPTION_READ_LODGE_SUCCESS]: (state, { payload: description }) => {
+    [LODGE_READ_CONTENTS_SUCCESS]: (state, { payload: contents }) => {
       return {
         ...state,
-        description
+        contents
       }
     },
-    [DESCRIPTION_READ_LODGE_FAILURE]: (state, { payload: error }) => ({
+    [LODGE_READ_CONTENTS_FAILURE]: (state, { payload: error }) => ({
       ...state,
       error: error
     }),
-    [INFORMATION_READ_LODGE_SUCCESS]: (state, { payload: information }) => {
+    [LODGE_READ_INFORMATION_SUCCESS]: (state, { payload: information }) => {
       return {
         ...state,
         information
       }
     },
-    [INFORMATION_READ_LODGE_FAILURE]: (state, { payload: error }) => ({
+    [LODGE_READ_INFORMATION_FAILURE]: (state, { payload: error }) => ({
       ...state,
       error: error
     })
@@ -49,4 +49,4 @@ const readLodge = handleActions(
   initialState
 )
 
-export default readLodge
+export default lodgeRead

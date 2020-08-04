@@ -48,7 +48,7 @@ const Lodge = (props) => {
 
   return (
     <>
-      <Contents attribute={{ title: `${description[0].name} (${description[0].description})` }}>
+      <Contents attribute={{ title: category === 'lodge' ? `${description[0].name} (${description[0].description})` : description[0].name }}>
         <figure className="thumbnail_common">
           <Slick attribute={{ design: 'slider', information: description[0] }} />
 

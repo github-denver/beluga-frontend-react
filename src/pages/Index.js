@@ -15,8 +15,8 @@ const Index = () => {
 
         <Hero attribute={{ category: 'hero' }} />
 
-        <Contents attribute={{ title: '다음엔 어디 갈까? 고민은 이제 그만!' }}>
-          <Slick attribute={{ design: 'middle', category: 'lodge' }} />
+        <Contents attribute={{ title: '패키지' }}>
+          <Slick attribute={{ design: 'middle', category: 'benefit' }} />
         </Contents>
 
         <Contents attribute={{ title: '우리도 호캉스 갈까?' }}>
