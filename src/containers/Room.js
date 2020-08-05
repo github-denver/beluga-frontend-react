@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Room from '../components/Room'
-import Room2 from '../components/Room2'
+import Benefit from '../components/Benefit'
 import { useSelector, useDispatch } from 'react-redux'
 import { roomReadContents, roomReadInformation } from '../modules/room/read'
 import { benefitReadContents, benefitReadInformation } from '../modules/benefit/read'
@@ -51,6 +51,8 @@ const Result = (props) => {
     }
   })
 
+  // console.log('containers → [Room.js] → benefit: ', benefit)
+
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -70,10 +72,10 @@ const Result = (props) => {
   return (
     <>
       {category === 'lodge' && (
-        <Room error={room.error} loading={room.loading} design={design} category={category} description={room.contents} information={room.information} />
+        <Room error={room.error} loading={room.loading} design={design} category={'room'} description={room.contents} information={room.information} />
       )}
       {category === 'benefit' && (
-        <Room2
+        <Benefit
           error={benefit.error}
           loading={benefit.loading}
           design={design}

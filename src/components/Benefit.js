@@ -7,21 +7,23 @@ import Information from './Information'
 
 const Styled = {}
 
-Styled.room = styled.section``
+Styled.benefit = styled.section``
 
-const Room = (props) => {
+const Benefit = (props) => {
+  // console.log('components → [Benefit.js] → props: ', props)
+
   const { description, error, loading, information, category } = props
 
   if (error) {
     if (error.response && error.response.status === 404) {
-      // console.group('components → [Room.js]')
+      // console.group('components → [Benefit.js]')
       // console.log('존재하지 않는 포스트입니다.')
       // console.groupEnd()
 
       return <p>존재하지 않는 포스트입니다.</p>
     }
 
-    // console.group('components → [Room.js]')
+    // console.group('components → [Benefit.js]')
     // console.log('에러가 발생했어요!')
     // console.groupEnd()
 
@@ -29,7 +31,7 @@ const Room = (props) => {
   }
 
   if (loading || !description || !information) {
-    // console.group('components → [Room.js]')
+    // console.group('components → [Benefit.js]')
     // console.log('읽어들이는 중이거나 아직 포스트 데이터가 존재하지 않을 때')
     // console.groupEnd()
 
@@ -37,7 +39,7 @@ const Room = (props) => {
   }
 
   if (!description || !information) {
-    // console.group('components → [Room.js]')
+    // console.group('components → [Benefit.js]')
     // console.log('포스트 목록이 존재하지 않을 때')
     // console.groupEnd()
 
@@ -48,9 +50,9 @@ const Room = (props) => {
     <>
       <Contents>
         <div className="area_common">
-          <strong className="title_common">객실 상세정보</strong>
+          <strong className="title_common">패키지 상세정보</strong>
 
-          {description.map((currentValue, index) => {
+          {information.map((currentValue, index) => {
             return (
               <figure className="thumbnail_common" key={index}>
                 <Slick attribute={{ design: 'slider', information: currentValue }} />
@@ -83,4 +85,4 @@ const Room = (props) => {
   )
 }
 
-export default Room
+export default Benefit

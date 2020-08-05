@@ -4,7 +4,7 @@ import Lodge from '../containers/Lodge'
 import Room from '../containers/Room'
 import Footer from '../components/common/Footer'
 
-const Index = ({ location }) => {
+const Read = ({ location }) => {
   const category = location.pathname.split('/').splice(1)[0] !== '' ? location.pathname.split('/').splice(1)[0] : 1
   // console.log('pages → [Read.js] → category: ', category)
 
@@ -25,4 +25,4 @@ const Index = ({ location }) => {
   )
 }
 
-export default Index
+export default Read

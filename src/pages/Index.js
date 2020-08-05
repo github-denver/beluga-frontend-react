@@ -15,16 +15,16 @@ const Index = () => {
 
         <Hero attribute={{ category: 'hero' }} />
 
-        <Contents attribute={{ title: '패키지' }}>
-          <Slick attribute={{ design: 'middle', category: 'benefit' }} />
+        <Contents attribute={{ title: '패키지', category: 'benefit' }}>
+          <Slick attribute={{ design: 'middle', category: 'benefit', invisible: true }} />
         </Contents>
 
-        <Contents attribute={{ title: '우리도 호캉스 갈까?' }}>
-          <Slick attribute={{ design: 'information', category: 'lodge' }} />
+        <Contents attribute={{ title: '이벤트', category: 'event' }}>
+          <Slick attribute={{ design: 'gallery', category: 'event', invisible: true }} />
         </Contents>
 
-        <Contents attribute={{ title: '매거진' }}>
-          <Slick attribute={{ design: 'gallery', category: 'lodge' }} />
+        <Contents attribute={{ title: '호텔', category: 'lodge' }}>
+          <Slick attribute={{ design: 'information', category: 'lodge', invisible: true }} />
         </Contents>
       </section>
 

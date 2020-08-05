@@ -14,12 +14,31 @@ const Navigation = (props) => {
       <div className="group_navigation">
         <strong className="invisible">주메뉴 목록</strong>
 
-        <Link to="#" className="link_local">
+        <Link to="/" className="link_local">
           {/* <span className="icon_global"></span> */}
           <span className="text_local">홈으로 </span>
         </Link>
 
         <ul className="list_navigation">
+          <li>
+            <strong className="title_navigation">
+              <span className="text_local">이벤트</span>
+              {/* <span className="icon_global"></span> */}
+            </strong>
+
+            <ul className="list_category">
+              <li>
+                <Link to="/event/list" className="link_category">
+                  이벤트
+                </Link>
+              </li>
+              <li>
+                <Link to="/benefit/list" className="link_category">
+                  패키지
+                </Link>
+              </li>
+            </ul>
+          </li>
           <li>
             <strong className="title_navigation">
               <span className="text_local">숙소 유형</span>
@@ -28,6 +47,11 @@ const Navigation = (props) => {
 
             <ul className="list_category">
               <li>
+                <Link to="/lodge/list" className="link_category">
+                  호텔
+                </Link>
+              </li>
+              {/* <li>
                 <Link to="#" className="link_category">
                   게스트하우스
                 </Link>
@@ -103,15 +127,15 @@ const Navigation = (props) => {
                 </Link>
               </li>
               <li>
-                <Link to="#" className="link_navigation1">
+                <Link to="#" className="link_category">
                   양식 가옥
                 </Link>
               </li>
               <li>
-                <Link to="#" className="link_navigation1">
+                <Link to="#" className="link_category">
                   민박
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </li>
         </ul>

@@ -11,7 +11,7 @@ body {
   font-size: 14px;
   line-height: 1;
   color: #333;
-  /* background-color: #333; */
+  background-color: #333;
 }
 
 fieldset,
@@ -119,8 +119,16 @@ a {
   height: 30px;
 }
 
+.button_profile .icon_global {
+  background-position: -35px 0;
+}
+
 .button_login .icon_global {
   background-position: -70px 0;
+}
+
+.button_logout .icon_global {
+  background-position: -105px 0;
 }
 
 .button_register .icon_global {

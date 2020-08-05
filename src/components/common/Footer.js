@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Styled = {}
 
@@ -10,6 +10,14 @@ const Footer = () => {
   return (
     <>
       <footer className="footer">
+        <h2 className="invisible">벨루가 (Beluga) 서비스 이용정보 및 사업자 정보</h2>
+
+        <strong className="invisible">서비스 이용정보</strong>
+        <ul className="list_utility">
+          <li className="link_utility">이 사이트는 포트폴리오 사이트입니다.</li>
+        </ul>
+      </footer>
+      {/* <footer className="footer">
         <h2 className="invisible">벨루가 (Beluga) 서비스 이용정보 및 사업자 정보</h2>
 
         <strong className="invisible">서비스 이용정보</strong>
@@ -49,7 +57,7 @@ const Footer = () => {
         </dl>
 
         <p className="text_copyright">ⓒ Beluga Corp.</p>
-      </footer>
+      </footer> */}
     </>
   )
 }

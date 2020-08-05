@@ -62,7 +62,7 @@ const Hero = (props) => {
         {!!hero &&
           hero.map((currentValue, index) => {
             return (
-              <Link to="#" key={index}>
+              <Link to={currentValue.url} key={index}>
                 <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/${currentValue.thumbnail})` }}>
                   <div className="group_dimmed">
                     <strong className="subject_dimmed">{currentValue.subject}</strong>

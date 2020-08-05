@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../components/common/header/Header'
+import Header from '../containers/common/header/Header'
 import Contents from '../components/common/Contents'
 import Login from '../containers/Login'
 import Footer from '../components/common/Footer'

@@ -8,7 +8,18 @@ const Styled = {}
 Styled.hamburger = styled.section``
 
 const Hamburger = ({ user, onOpen, open }) => {
+  // console.log('components → common → header → [Hamburger.js] → user: ', user)
+  // console.log('components → common → header → [Hamburger.js] → onOpen: ', onOpen)
   // console.log('components → common → header → [Hamburger.js] → open: ', open)
+  // console.log('')
+
+  if (!user || !user.picture) {
+    // console.group('components → common → header → [Hamburger.js]')
+    // console.log('읽어들이는 중이거나 아직 포스트 데이터가 존재하지 않을 때')
+    // console.groupEnd()
+
+    return null
+  }
 
   return (
     <section className={open ? 'area_hamburger active' : 'area_hamburger'}>
@@ -16,11 +27,11 @@ const Hamburger = ({ user, onOpen, open }) => {
       {user ? (
         <div className="group_profile">
           <Link to="/login" className="link_profile">
-            {/* <div className="group_picture">
-              <img src="/images/common/default_picture.png" alt="" className="image_picture" />
-            </div> */}
+            <div className="group_picture">
+              <img src={`/images/common/${user.picture}`} alt="" className="image_picture" />
+            </div>
 
-            <span className="text_profile">TEST</span>
+            <span className="text_profile">{user.name}</span>
           </Link>
         </div>
       ) : (
@@ -64,7 +75,12 @@ const Hamburger = ({ user, onOpen, open }) => {
               </span>
             </span>
 
-            <Link to="#" className="link_common1">
+            <Link
+              to="#"
+              className="link_common1"
+              onClick={() => {
+                alert('개발 진행 중입니다.')
+              }}>
               검색하기
             </Link>
           </fieldset>

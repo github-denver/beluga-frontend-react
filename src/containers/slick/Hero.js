@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import Hero from '../../components/slick/Hero'
 import { useSelector, useDispatch } from 'react-redux'
 import { listHero } from '../../modules/hero/list'
@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom'
 const Result = (props) => {
   const { location, attribute } = props
 
-  const sensor = useRef(false)
+  // const sensor = useRef(false)
 
   const { hero, error, loading } = useSelector(({ hero, loading }) => {
     const data = {}
@@ -25,22 +25,22 @@ const Result = (props) => {
 
   const dispatch = useDispatch()
 
-  useEffect(() => {
+  /* useEffect(() => {
     const result = !hero
 
     if (result) return
 
     sensor.current = true
-  }, [hero])
+  }, [hero]) */
 
   useEffect(() => {
     const number = location.pathname.split('/').splice(-1)[0] !== '' ? location.pathname.split('/').splice(-1)[0] : 1
 
-    if (sensor.current) {
+    /* if (sensor.current) {
       sensor.current = true
 
       return
-    }
+    } */
 
     dispatch(listHero({ category: attribute.category, number }))
   }, [dispatch, location.pathname, attribute.category])

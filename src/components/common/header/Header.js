@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Hamburger from './Hamburger'
@@ -24,10 +24,6 @@ const Header = ({ user, logout }) => {
     }
   }
 
-  useEffect(() => {
-    // console.log('components → common → header → [Header.js] → open: ', open)
-  }, [open])
-
   return (
     <header className="header">
       <h1 className="title_beluga">
@@ -35,7 +31,6 @@ const Header = ({ user, logout }) => {
           Beluga
         </Link>
       </h1>
-
       <Utility user={user} logout={logout} onOpen={onOpen} />
 
       <Hamburger user={user} onOpen={onOpen} open={open} />

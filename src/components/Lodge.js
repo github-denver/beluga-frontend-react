@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Contents from './common/Contents'
 import Slick from '../components/slick/Slick'
@@ -10,9 +10,16 @@ const Styled = {}
 Styled.read = styled.section``
 
 const Lodge = (props) => {
+  // console.log('components → [Lodge.js] → props: ', props)
+  // console.log('')
+
   const { description, information, error, loading, category } = props
 
-  useEffect(() => {})
+  const navigation = {
+    benefit: '패키지',
+    event: '이벤트',
+    lodge: '호텔'
+  }
 
   if (error) {
     if (error.response && error.response.status === 404) {
@@ -48,28 +55,54 @@ const Lodge = (props) => {
 
   return (
     <>
-      <Contents attribute={{ title: category === 'lodge' ? `${description[0].name} (${description[0].description})` : description[0].name }}>
+      <Contents
+        attribute={{ title: category === 'lodge' ? `${description[0].name} (${description[0].description})` : navigation[category], category: category }}>
         <figure className="thumbnail_common">
           <Slick attribute={{ design: 'slider', information: description[0] }} />
 
-          <Caption
-            attribute={{
-              design: 'information',
-              information: {
-                name: description[0].name,
-                description: description[0].description,
-                latest: '새 글',
-                contents: description[0].contents
-              }
-            }}>
-            <Information
-              attribute={{
-                design: 'information',
-                information: information[0],
-                category: category
-              }}
-            />
-          </Caption>
+          {category === 'event' ? (
+            <>
+              {/* 이벤트 information */}
+              <Caption
+                attribute={{
+                  design: 'information',
+                  category: category,
+                  information: information[0],
+                  invisible: false
+                }}>
+                <Information
+                  attribute={{
+                    design: 'information',
+                    information: information[0],
+                    category: category
+                  }}
+                />
+              </Caption>
+            </>
+          ) : (
+            <>
+              {/* 나머지 information */}
+              <Caption
+                attribute={{
+                  design: 'information',
+                  category: category,
+                  information: {
+                    name: description[0].name,
+                    description: description[0].description,
+                    // latest: '새 글',
+                    contents: description[0].contents
+                  }
+                }}>
+                <Information
+                  attribute={{
+                    design: 'information',
+                    information: information[0],
+                    category: category
+                  }}
+                />
+              </Caption>
+            </>
+          )}
         </figure>
       </Contents>
     </>

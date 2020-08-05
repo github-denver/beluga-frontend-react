@@ -13,11 +13,16 @@ const Utility = ({ user, logout, onOpen }) => {
     <div className="area_utility">
       {user ? (
         <>
-          <button type="button" className="button_global button_utility" onClick={logout}>
+          <button type="button" className="button_global button_utility button_logout" onClick={logout}>
             <span className="icon_global">로그아웃</span>
           </button>
 
-          <Link to="/register" className="button_global button_utility">
+          <Link
+            to="#"
+            className="button_global button_utility button_profile"
+            onClick={() => {
+              alert('개발 진행 중입니다.')
+            }}>
             <span className="icon_global">마이페이지</span>
           </Link>
         </>

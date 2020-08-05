@@ -34,6 +34,8 @@ const Result = () => {
     return { user: data.user }
   })
 
+  // console.log('containers → common → header → [Header.js] → user: ', user)
+
   const dispatch = useDispatch()
 
   const onLogout = () => {

@@ -14,6 +14,7 @@ const Loading = () => {
           <span className="subject_loading"></span>
           <span className="text_loading"></span>
         </div>
+        <span className="layer_effect"></span>
       </div>
     </>
   )
