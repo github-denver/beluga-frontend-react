@@ -10,15 +10,17 @@ const Read = ({ location }) => {
 
   return (
     <>
-      <Header />
+      <div className="inner_global">
+        <Header />
 
-      <section className="container">
-        <h2 className="invisible">벨루가 (Beluga) 본문 영역</h2>
+        <section className="container">
+          <h2 className="invisible">벨루가 (Beluga) 본문 영역</h2>
 
-        <Lodge category={category} />
+          <Lodge category={category} />
 
-        <Room category={category} />
-      </section>
+          <Room category={category} />
+        </section>
+      </div>
 
       <Footer />
     </>

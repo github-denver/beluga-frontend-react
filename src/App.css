@@ -101,13 +101,25 @@
 ---------- ---------- ---------- ---------- ---------- */
 .area_hamburger {
   display: none;
-  overflow: auto;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: #f1f1f1;
+}
+
+.area_hamburger .inner_global {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  background-color: #fff;
 }
 
 .area_hamburger .group_profile {

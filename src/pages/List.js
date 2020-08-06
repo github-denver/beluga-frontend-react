@@ -20,15 +20,17 @@ const List = (props) => {
 
   return (
     <>
-      <Header />
+      <div className="inner_global">
+        <Header />
 
-      <section className="container">
-        <h2 className="invisible">벨루가 (Beluga) 본문 영역</h2>
+        <section className="container">
+          <h2 className="invisible">벨루가 (Beluga) 본문 영역</h2>
 
-        <Contents attribute={{ title: navigation[category], category: category }}>
-          <Slick attribute={{ design: 'information', category: category, invisible: true }} />
-        </Contents>
-      </section>
+          <Contents attribute={{ title: navigation[category], category: category }}>
+            <Slick attribute={{ design: 'information', category: category, invisible: true }} />
+          </Contents>
+        </section>
+      </div>
 
       <Footer />
     </>

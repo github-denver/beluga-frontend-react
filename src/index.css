@@ -72,6 +72,8 @@ a {
 /* inner_global
 ---------- ---------- ---------- ---------- ---------- */
 .inner_global {
+  position: relative;
+  min-width: 320px;
   max-width: 640px;
   margin: 0 auto;
 }
@@ -164,4 +166,10 @@ a {
 .container .slick-slide {
   margin: 0 12px;
   box-sizing: border-box;
+}
+
+/* App
+---------- ---------- ---------- ---------- ---------- */
+.App {
+  background-color: #fff;
 }

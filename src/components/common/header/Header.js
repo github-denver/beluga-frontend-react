@@ -26,14 +26,16 @@ const Header = ({ user, logout }) => {
 
   return (
     <header className="header">
-      <h1 className="title_beluga">
-        <Link to="/" className="link_beluga">
-          Beluga
-        </Link>
-      </h1>
-      <Utility user={user} logout={logout} onOpen={onOpen} />
+      <div className="inner_global">
+        <h1 className="title_beluga">
+          <Link to="/" className="link_beluga">
+            Beluga
+          </Link>
+        </h1>
+        <Utility user={user} logout={logout} onOpen={onOpen} />
 
-      <Hamburger user={user} onOpen={onOpen} open={open} />
+        <Hamburger user={user} onOpen={onOpen} open={open} />
+      </div>
     </header>
   )
 }
