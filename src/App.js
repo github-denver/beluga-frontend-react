@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Route component={Index} path={['/', '/beluga']} exact />
       <Route component={List} path={['/beluga/:service/list', '/beluga/:service/list/:number']} />
-      <Route component={Read} path={'/beluga/:service/read/:number'} />
+      <Route component={Read} path={['/beluga/:service/read', '/beluga/:service/read/:number']} />
       <Route component={Login} path={'/beluga/member/login'} />
       <Route component={Register} path={'/beluga/member/register'} />
     </div>
