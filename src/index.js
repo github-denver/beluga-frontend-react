@@ -10,8 +10,8 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import { createStore, compose, applyMiddleware } from 'redux'
+// import { composeWithDevTools } from 'redux-devtools-extension'
 import rootReducer, { rootSaga } from './modules'
 import createSagaMiddleware from 'redux-saga'
 import { tempSetUser, check } from './modules/user'
@@ -19,7 +19,23 @@ import Cookies from 'js-cookie'
 
 const sagaMiddleware = createSagaMiddleware()
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)))
+const middlewares = [sagaMiddleware]
+
+const composeEnhancers =
+  typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && process.env.NODE_ENV !== 'production'
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+      })
+    : compose
+
+const enhancer = composeEnhancers(
+  // applyMiddleware(logger, ...middlewares)
+  applyMiddleware(...middlewares)
+  // other store enhancers if any
+)
+
+// const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)))
+const store = createStore(rootReducer, enhancer)
 
 function user() {
   try {
