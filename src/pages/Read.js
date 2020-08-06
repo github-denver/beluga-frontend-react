@@ -5,7 +5,7 @@ import Room from '../containers/Room'
 import Footer from '../components/common/Footer'
 
 const Read = ({ location }) => {
-  const category = location.pathname.split('/').splice(1)[0] !== '' ? location.pathname.split('/').splice(1)[0] : 1
+  const category = location.pathname.split('/').splice(1)[1] !== '' ? location.pathname.split('/').splice(1)[1] : null
   // console.log('pages → [Read.js] → category: ', category)
 
   return (

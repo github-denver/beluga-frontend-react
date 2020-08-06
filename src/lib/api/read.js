@@ -5,5 +5,5 @@ export const readDescription = ({ category, number }) => {
 }
 
 export const readInformation = ({ category, number }) => {
-  return axios.get(`/api/beluga/information/${category}/read/${number}`)
+  return axios.get(`/api/beluga/board/information/${category}/read/${number}`)
 }

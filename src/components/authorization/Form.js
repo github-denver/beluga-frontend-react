@@ -168,11 +168,11 @@ const Form = ({ type, form, onChange, onSubmit, error }) => {
 
           <div className="inner_half">
             {type === 'login' ? (
-              <Link to="/register" className="link_common1">
+              <Link to="/beluga/member/register" className="link_common1">
                 회원가입
               </Link>
             ) : (
-              <Link to="/login" className="link_common1">
+              <Link to="/beluga/member/login" className="link_common1">
                 로그인
               </Link>
             )}

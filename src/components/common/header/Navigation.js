@@ -14,7 +14,7 @@ const Navigation = (props) => {
       <div className="group_navigation">
         <strong className="invisible">주메뉴 목록</strong>
 
-        <Link to="/" className="link_local">
+        <Link to="/beluga" className="link_local">
           {/* <span className="icon_global"></span> */}
           <span className="text_local">홈으로 </span>
         </Link>
@@ -28,12 +28,12 @@ const Navigation = (props) => {
 
             <ul className="list_category">
               <li>
-                <Link to="/event/list" className="link_category">
+                <Link to="/beluga/event/list" className="link_category">
                   이벤트
                 </Link>
               </li>
               <li>
-                <Link to="/benefit/list" className="link_category">
+                <Link to="/beluga/benefit/list" className="link_category">
                   패키지
                 </Link>
               </li>
@@ -47,7 +47,7 @@ const Navigation = (props) => {
 
             <ul className="list_category">
               <li>
-                <Link to="/lodge/list" className="link_category">
+                <Link to="/beluga/lodge/list" className="link_category">
                   호텔
                 </Link>
               </li>

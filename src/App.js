@@ -10,9 +10,9 @@ import Register from './pages/Register'
 function App() {
   return (
     <div className="App">
-      <Route component={Index} path={['/beluga']} exact />
-      <Route component={List} path={['/beluga/board/:service/list', '/:service/list/:number']} />
-      <Route component={Read} path={'/beluga/board/:service/read/:number'} />
+      <Route component={Index} path={['/', '/beluga']} exact />
+      <Route component={List} path={['/beluga/:service/list', '/beluga/:service/list/:number']} />
+      <Route component={Read} path={'/beluga/:service/read/:number'} />
       <Route component={Login} path={'/beluga/member/login'} />
       <Route component={Register} path={'/beluga/member/register'} />
     </div>

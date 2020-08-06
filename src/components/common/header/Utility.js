@@ -28,11 +28,11 @@ const Utility = ({ user, logout, onOpen }) => {
         </>
       ) : (
         <>
-          <Link to="/login" className="button_global button_utility button_login">
+          <Link to="/beluga/member/login" className="button_global button_utility button_login">
             <span className="icon_global">로그인</span>
           </Link>
 
-          <Link to="/register" className="button_global button_utility button_register">
+          <Link to="/beluga/member/register" className="button_global button_utility button_register">
             <span className="icon_global">회원가입</span>
           </Link>
         </>

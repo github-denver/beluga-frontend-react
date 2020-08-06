@@ -28,7 +28,7 @@ const Header = ({ user, logout }) => {
     <header className="header">
       <div className="inner_global">
         <h1 className="title_beluga">
-          <Link to="/" className="link_beluga">
+          <Link to="/beluga" className="link_beluga">
             Beluga
           </Link>
         </h1>

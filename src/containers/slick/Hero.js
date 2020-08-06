@@ -34,7 +34,8 @@ const Result = (props) => {
   }, [hero]) */
 
   useEffect(() => {
-    const number = location.pathname.split('/').splice(-1)[0] !== '' ? location.pathname.split('/').splice(-1)[0] : 1
+    const number = typeof location.pathname.split('/').splice(-1)[0] !== 'string' ? location.pathname.split('/').splice(-1)[0] : 1
+    // console.log('containers → slick → [Hero.js] → number: ', number)
 
     /* if (sensor.current) {
       sensor.current = true

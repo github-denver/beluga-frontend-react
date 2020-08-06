@@ -103,7 +103,7 @@ const Login = ({ history }) => {
       // console.log('containers → [Login.js] → user: ', user)
       // console.log('')
 
-      history.push('/')
+      history.push('/beluga')
 
       try {
         const data = {

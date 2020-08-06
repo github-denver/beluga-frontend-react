@@ -77,7 +77,7 @@ const Slick = (props) => {
           {attribute.description.map((currentValue, index) => {
             return (
               <div className="box_common" key={index}>
-                <Link to={`/${attribute.category}/read/${currentValue.number}`} className="link_common">
+                <Link to={`/beluga/${attribute.category}/read/${currentValue.number}`} className="link_common">
                   <figure className="thumbnail_common">
                     <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/${currentValue.thumbnail})` }}></div>
                     <Caption
@@ -101,7 +101,7 @@ const Slick = (props) => {
           {attribute.description.map((currentValue, index) => {
             return (
               <div className="box_common" key={index}>
-                <Link to={`/${attribute.category}/read/${currentValue.number}`} className="link_common">
+                <Link to={`/beluga/${attribute.category}/read/${currentValue.number}`} className="link_common">
                   <figure className="thumbnail_common">
                     <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/${currentValue.thumbnail})` }}></div>
 
@@ -139,7 +139,7 @@ const Slick = (props) => {
           {attribute.description.map((currentValue, index) => {
             return (
               <div className="box_common" key={index}>
-                <Link to={`/${attribute.category}/read/${currentValue.number}`} className="link_common">
+                <Link to={`/beluga/${attribute.category}/read/${currentValue.number}`} className="link_common">
                   <figure className="thumbnail_common">
                     <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/${currentValue.thumbnail})` }}></div>
 

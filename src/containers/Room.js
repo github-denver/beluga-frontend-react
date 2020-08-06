@@ -57,6 +57,7 @@ const Result = (props) => {
 
   useEffect(() => {
     const number = location.pathname.split('/').splice(-1)[0] === '' ? 1 : location.pathname.split('/').splice(-1)[0]
+    // console.log('containers → [Room.js] → number: ', number)
 
     if (category === 'lodge') {
       dispatch(roomReadContents({ category: 'room', number }))

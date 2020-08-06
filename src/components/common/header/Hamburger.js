@@ -13,13 +13,12 @@ const Hamburger = ({ user, onOpen, open }) => {
   // console.log('components → common → header → [Hamburger.js] → open: ', open)
   // console.log('')
 
-  /* if (!user || !user.picture) {
-    console.group('components → common → header → [Hamburger.js]')
-    console.log('읽어들이는 중이거나 아직 포스트 데이터가 존재하지 않을 때')
-    console.groupEnd()
-
-    return null
-  } */
+  if (!user || !user.picture) {
+    // console.group('components → common → header → [Hamburger.js]')
+    // console.log('읽어들이는 중이거나 아직 포스트 데이터가 존재하지 않을 때')
+    // console.groupEnd()
+    // return null
+  }
 
   return (
     <section className={open ? 'area_hamburger active' : 'area_hamburger'}>
@@ -27,7 +26,7 @@ const Hamburger = ({ user, onOpen, open }) => {
         <h2 className="invisible">벨루가 (Beluga) 주메뉴 영역</h2>
         {user ? (
           <div className="group_profile">
-            <Link to="/login" className="link_profile">
+            <Link to="/beluga" className="link_profile">
               <div className="group_picture">
                 <img src={`/images/common/${user.picture}`} alt="" className="image_picture" />
               </div>
@@ -37,7 +36,7 @@ const Hamburger = ({ user, onOpen, open }) => {
           </div>
         ) : (
           <div className="group_profile">
-            <Link to="/login" className="link_profile">
+            <Link to="/beluga/member/login" className="link_profile">
               <div className="group_picture">
                 <img src="/images/common/default_picture.png" alt="" className="image_picture" />
               </div>

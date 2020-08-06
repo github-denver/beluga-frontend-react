@@ -16,7 +16,7 @@ const Contents = (props) => {
       <section className={attribute && attribute.className ? `contents ${attribute.className}` : 'contents'}>
         {attribute && attribute.title && (
           <h3 className="title_contents">
-            <Link to={{ pathname: `/${attribute.category}/list`, query: { title: attribute.title } }} className="link_contents">
+            <Link to={{ pathname: `/beluga/${attribute.category}/list`, query: { title: attribute.title } }} className="link_contents">
               {attribute.title}
             </Link>
           </h3>

@@ -101,7 +101,7 @@ const Register = ({ history }) => {
 
       // dispatch(check())
 
-      history.push('/login')
+      history.push('/beluga/member/login')
     }
     // }, [authorization, error, dispatch])
   }, [error, authorization, history])
