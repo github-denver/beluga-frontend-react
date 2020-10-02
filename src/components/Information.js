@@ -48,7 +48,6 @@ const Information = (props) => {
         <>
           {attribute.information && attribute.invisible ? (
             <>
-              {/* {attribute.category !== 'benefit' && ( */}
               {(attribute.category === 'lodge' || attribute.category === 'room') && (
                 <>
                   <dl className={`description_${attribute.design} ${attribute.category}`}>

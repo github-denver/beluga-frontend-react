@@ -20,6 +20,7 @@ const List = () => {
                 얼마 안 남았어요!
               </Link>
             </h3>
+
             <p className="text_contents">나머지 정보를 입력해 주세요!</p>
 
             <Register />

@@ -87,7 +87,7 @@ const Hamburger = ({ user, onOpen, open }) => {
           </form>
         </div>
 
-        <button type="button" className="button_global button_hamburger button_close" onClick={onOpen}>
+        <button type="button" className="button_global button_utility button_close" onClick={onOpen}>
           <span className="icon_global">주메뉴 닫기</span>
         </button>
       </div>

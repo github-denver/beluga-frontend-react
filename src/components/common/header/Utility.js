@@ -38,7 +38,7 @@ const Utility = ({ user, logout, onOpen }) => {
         </>
       )}
 
-      <button type="button" className="button_global button_utility button_navigation" onClick={onOpen}>
+      <button type="button" className="button_global button_utility button_hamburger" onClick={onOpen}>
         <span className="icon_global">주메뉴 영역 열기</span>
       </button>
     </div>

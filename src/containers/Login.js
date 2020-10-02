@@ -12,9 +12,9 @@ const Login = ({ history }) => {
   const [message, setMessage] = useState(null)
 
   const { form, token, error, user } = useSelector(({ authorization, user }) => {
-    // console.log('containers → [Login.js] → authorization: ', authorization)
-    // console.log('containers → [Login.js] → user: ', user)
-    // console.log('')
+    console.log('containers → [Login.js] → authorization: ', authorization)
+    console.log('containers → [Login.js] → user: ', user)
+    console.log('')
 
     let data = {}
 
@@ -37,11 +37,11 @@ const Login = ({ history }) => {
     }
   })
 
-  // console.log('containers → [Login.js] → form: ', form)
-  // console.log('containers → [Login.js] → token: ', token)
-  // console.log('containers → [Login.js] → error: ', error)
-  // console.log('containers → [Login.js] → user: ', user)
-  // console.log('')
+  console.log('containers → [Login.js] → form: ', form)
+  console.log('containers → [Login.js] → token: ', token)
+  console.log('containers → [Login.js] → error: ', error)
+  console.log('containers → [Login.js] → user: ', user)
+  console.log('')
 
   const dispatch = useDispatch()
 
@@ -61,9 +61,9 @@ const Login = ({ history }) => {
     event.preventDefault()
 
     const { id, password } = form
-    // console.log('containers → [Login.js] → id: ', id)
-    // console.log('containers → [Login.js] → password: ', password)
-    // console.log('')
+    console.log('containers → [Login.js] → id: ', id)
+    console.log('containers → [Login.js] → password: ', password)
+    console.log('')
 
     dispatch(login({ id, password }))
   }
@@ -81,17 +81,17 @@ const Login = ({ history }) => {
       return
     }
 
-    // console.log('containers → [Login.js] → token: ', token)
-    // console.log('containers → [Login.js] → !token: ', !token)
-    // console.log('containers → [Login.js] → !!token: ', !!token)
-    // console.log('')
+    console.log('containers → [Login.js] → token: ', token)
+    console.log('containers → [Login.js] → !token: ', !token)
+    console.log('containers → [Login.js] → !!token: ', !!token)
+    console.log('')
 
     if (!!token) {
-      // console.log('containers → [Login.js] → 로그인에 성공했어요!')
-      // console.log('containers → [Login.js] → token: ', token)
-      // console.log('containers → [Login.js] → !token: ', !token)
-      // console.log('containers → [Login.js] → !!token: ', !!token)
-      // console.log('')
+      console.log('containers → [Login.js] → 로그인에 성공했어요!')
+      console.log('containers → [Login.js] → token: ', token)
+      console.log('containers → [Login.js] → !token: ', !token)
+      console.log('containers → [Login.js] → !!token: ', !!token)
+      console.log('')
 
       dispatch(check(token))
     }
@@ -99,9 +99,9 @@ const Login = ({ history }) => {
 
   useEffect(() => {
     if (user) {
-      // console.log('containers → [Login.js] → check API 성공')
-      // console.log('containers → [Login.js] → user: ', user)
-      // console.log('')
+      console.log('containers → [Login.js] → check API 성공')
+      console.log('containers → [Login.js] → user: ', user)
+      console.log('')
 
       history.push('/beluga')
 

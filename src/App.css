@@ -11,11 +11,11 @@
   background-color: #fff;
 }
 
-.header .title_beluga {
+.header .title_brand {
   display: inline-block;
 }
 
-.header .link_beluga {
+.header .link_brand {
   display: block;
   padding: 12px;
   font-size: 16px;
@@ -80,7 +80,7 @@
 .area_utility {
   position: absolute;
   top: 50%;
-  right: 12px;
+  right: 0;
   margin-top: -15px;
   font-size: 0;
 }
@@ -138,7 +138,7 @@
   background-color: #fff;
 }
 
-.area_hamburger .button_hamburger {
+.area_hamburger .button_close {
   position: absolute;
   top: 17px;
   right: 12px;
@@ -160,61 +160,59 @@
   background-color: #fff;
 }
 
-.group_navigation .link_local {
+.group_navigation .link_navigation {
   display: inline-block;
   padding: 12px;
   font-weight: bold;
   font-size: 22px;
 }
 
-.group_navigation .link_local .text_local {
+.group_navigation .link_navigation .text_navigation {
   display: inline-block;
   vertical-align: middle;
 }
 
-.group_navigation .link_local .text_local + .icon_global {
+.group_navigation .link_navigation .text_navigation + .icon_global {
   margin-left: 12px;
 }
 
-.group_navigation .link_local .icon_global {
+.group_navigation .link_navigation .icon_global {
   width: 48px;
   height: 48px;
   background-position: 0 -105px;
   vertical-align: middle;
 }
 
-.group_navigation .link_local .icon_global + .text_local {
+.group_navigation .link_navigation .icon_global + .text_navigation {
   margin-left: 12px;
 }
 
-/* .group_navigation .list_navigation {} */
-
 /* list_navigation
 ---------- ---------- ---------- ---------- ---------- */
-.list_navigation .title_navigation {
+.list_navigation .title_common {
   display: inline-block;
   padding: 12px;
   font-weight: bold;
   font-size: 16px;
 }
 
-.list_navigation .title_navigation .text_local {
+.list_navigation .title_common .text_local {
   display: inline-block;
   vertical-align: middle;
 }
 
-.list_navigation .title_navigation .text_local + .icon_global {
+.list_navigation .title_common .text_local + .icon_global {
   margin-left: 8px;
 }
 
-.list_navigation .title_navigation .icon_global {
+.list_navigation .title_common .icon_global {
   width: 14px;
   height: 14px;
   background-position: 0 -35px;
   vertical-align: middle;
 }
 
-.list_navigation .title_navigation .icon_global + .text_local {
+.list_navigation .title_common .icon_global + .text_local {
   margin-left: 8px;
 }
 
@@ -265,7 +263,8 @@
   vertical-align: middle;
 }
 
-.thumbnail_common .text_dimmed {
+.thumbnail_common .text_dimmed,
+.thumbnail_common .description_dimmed {
   font-size: 12px;
   line-height: 1.6;
   vertical-align: middle;
@@ -748,7 +747,7 @@
 }
 
 .group_field .box_field .textfield_common {
-  padding: 12px 0;
+  padding: 12px;
 }
 
 .group_field ~ .group_field {

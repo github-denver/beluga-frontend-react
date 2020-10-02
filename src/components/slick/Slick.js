@@ -74,12 +74,13 @@ const Slick = (props) => {
       {attribute.design === 'middle' && (
         <div className="area_common slick">
           {/* 패키지 */}
-          {attribute.description.map((currentValue, index) => {
+          {/* {attribute.description.map((currentValue, index) => {
             return (
               <div className="box_common" key={index}>
                 <Link to={`/beluga/${attribute.category}/read/${currentValue.number}`} className="link_common">
                   <figure className="thumbnail_common">
                     <div className="image_common" style={{ backgroundImage: `url(/uploads/shilla/${currentValue.thumbnail})` }}></div>
+
                     <Caption
                       attribute={{
                         design: 'middle',
@@ -91,14 +92,14 @@ const Slick = (props) => {
                 </Link>
               </div>
             )
-          })}
+          })} */}
         </div>
       )}
 
       {attribute.design === 'information' && (
         <div className="area_common slick">
           {/* 호텔 */}
-          {attribute.description.map((currentValue, index) => {
+          {/* {attribute.description.map((currentValue, index) => {
             return (
               <div className="box_common" key={index}>
                 <Link to={`/beluga/${attribute.category}/read/${currentValue.number}`} className="link_common">
@@ -113,30 +114,28 @@ const Slick = (props) => {
                         invisible: attribute.invisible
                       }}>
                       {attribute.invisible && (
-                        <>
-                          <Information
-                            attribute={{
-                              design: 'information',
-                              information: attribute.information && attribute.information[index],
-                              category: attribute.category,
-                              invisible: attribute.invisible
-                            }}
-                          />
-                        </>
+                        <Information
+                          attribute={{
+                            design: 'information',
+                            information: attribute.information && attribute.information[index],
+                            category: attribute.category,
+                            invisible: attribute.invisible
+                          }}
+                        />
                       )}
                     </Caption>
                   </figure>
                 </Link>
               </div>
             )
-          })}
+          })} */}
         </div>
       )}
 
       {attribute.design === 'gallery' && (
         <div className="area_common slick">
           {/* 이벤트 */}
-          {attribute.description.map((currentValue, index) => {
+          {/* {attribute.description.map((currentValue, index) => {
             return (
               <div className="box_common" key={index}>
                 <Link to={`/beluga/${attribute.category}/read/${currentValue.number}`} className="link_common">
@@ -151,24 +150,22 @@ const Slick = (props) => {
                         invisible: attribute.invisible
                       }}>
                       {attribute.invisible && (
-                        <>
-                          <Information
-                            attribute={{
-                              design: 'information',
-                              information: attribute.information && attribute.information[index],
-                              category: attribute.category,
-                              invisible: attribute.invisible,
-                              half: true
-                            }}
-                          />
-                        </>
+                        <Information
+                          attribute={{
+                            design: 'information',
+                            information: attribute.information && attribute.information[index],
+                            category: attribute.category,
+                            invisible: attribute.invisible,
+                            half: true
+                          }}
+                        />
                       )}
                     </Caption>
                   </figure>
                 </Link>
               </div>
             )
-          })}
+          })} */}
         </div>
       )}
 

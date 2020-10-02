@@ -28,7 +28,7 @@ const loginSaga = createRequestSaga(LOGIN, api.login)
 const registerSaga = createRequestSaga(REGISTER, api.register)
 
 function* logoutSaga() {
-  // console.log('modules → [authorization.js] → function logoutSaga() { .. }')
+  // console.log('modules → [authorization.js] → function* logoutSaga() { .. }')
 
   try {
     yield call(api.logout)
@@ -37,7 +37,7 @@ function* logoutSaga() {
 
     Cookies.remove('accessToken')
 
-    // console.log("modules → [authorization.js] → function logoutSaga() { .. } → localStorage.getItem('user'): ", localStorage.getItem('user'))
+    // console.log("modules → [authorization.js] → function* logoutSaga() { .. } → localStorage.getItem('user'): ", localStorage.getItem('user'))
   } catch (error) {
     console.error(error)
   }
@@ -81,7 +81,8 @@ const authorization = handleActions(
       }
     },
     [LOGIN_SUCCESS]: (state, { payload: authorization }) => {
-      // console.log('modules → [authorization.js] → function logoutSaga() { .. } → authorization: ', authorization)
+      console.log('modules → [authorization.js] → state: ', state)
+      console.log('modules → [authorization.js] → authorization: ', authorization)
 
       return {
         ...state,
@@ -94,7 +95,7 @@ const authorization = handleActions(
       error: error
     }),
     [LOGOUT]: (state, { payload: form }) => {
-      // console.log('modules → [authorization.js] → function logoutSaga() { .. } → form: ', form)
+      // console.log('modules → [authorization.js] → form: ', form)
 
       return {
         ...state,

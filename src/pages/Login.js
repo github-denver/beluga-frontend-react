@@ -20,6 +20,7 @@ const Login1 = () => {
                 로그인
               </Link>
             </h3>
+
             <p className="text_contents">로그인해 주세요!</p>
 
             <Login />

@@ -27,6 +27,7 @@ const Caption = (props) => {
             <>
               {attribute.category !== 'event' ? (
                 <>
+                  {/* ? */}
                   <div className="untitled_common">
                     <strong className={`subject_${attribute.design}`}>{attribute.information.subject}</strong>
                     <em className="icon_global">{attribute.information.latest}</em>

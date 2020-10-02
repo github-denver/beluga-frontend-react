@@ -67,7 +67,7 @@ const Hero = (props) => {
                   <div className="group_dimmed">
                     <strong className="subject_dimmed">{currentValue.subject}</strong>
                     <span className="text_dimmed">{currentValue.description}</span>
-                    <p className="text_dimmed">{currentValue.contents}</p>
+                    <p className="description_dimmed">{currentValue.contents}</p>
                   </div>
                 </div>
               </Link>

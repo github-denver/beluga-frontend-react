@@ -27,14 +27,15 @@ const Header = ({ user, logout }) => {
   return (
     <header className="header">
       <div className="inner_global">
-        <h1 className="title_beluga">
-          <Link to="/beluga" className="link_beluga">
+        <h1 className="title_brand">
+          <Link to="/beluga" className="link_brand">
             Beluga
           </Link>
         </h1>
+
         <Utility user={user} logout={logout} onOpen={onOpen} />
 
-        <Hamburger user={user} onOpen={onOpen} open={open} />
+        {/* <Hamburger user={user} onOpen={onOpen} open={open} /> */}
       </div>
     </header>
   )

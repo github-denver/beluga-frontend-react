@@ -13,10 +13,10 @@ const message = {
 }
 
 const Form = ({ type, form, onChange, onSubmit, error }) => {
-  // console.log('components → authorization → [Form.js] → type: ', type)
+  console.log('components → authorization → [Form.js] → type: ', type)
 
   const text = message[type]
-  // console.log('components → authorization → [Form.js] → text: ', text)
+  console.log('components → authorization → [Form.js] → text: ', text)
 
   return (
     <Styled.form>

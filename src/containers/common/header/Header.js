@@ -1,15 +1,15 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 import Header from '../../../components/common/header/Header'
 import { logout2 } from '../../../modules/authorization'
 import { logout } from '../../../modules/user'
 
 const Result = () => {
   const { user } = useSelector(({ user }) => {
-    // console.log('containers → common → header → [Header.js] → user: ', user)
-    // console.log('containers → common → header → [Header.js] → user.user : ', user.user)
+    console.log('containers → common → header → [Header.js] → user: ', user)
+    console.log('containers → common → header → [Header.js] → user.user : ', user.user)
     // console.log('containers → common → header → [Header.js] → typeof user.user : ', typeof user.user)
-    // console.log('')
+    console.log('')
 
     let data = {}
 
@@ -32,15 +32,17 @@ const Result = () => {
     // console.log('')
 
     return { user: data.user }
-  })
+  }, shallowEqual)
 
-  // console.log('containers → common → header → [Header.js] → user: ', user)
+  console.log('containers → common → header → [Header.js] → user: ', user)
 
   const dispatch = useDispatch()
 
   const onLogout = () => {
+    console.log('containers → common → header → [Header.js] → useEffect(() => { .. } → dispatch() 실행')
     dispatch(logout2('login'))
     dispatch(logout())
+    console.log('containers → common → header → [Header.js] → useEffect(() => { .. } → dispatch() 종료')
   }
 
   return <Header user={user} logout={onLogout} />

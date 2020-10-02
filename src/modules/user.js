@@ -35,7 +35,7 @@ function checkFailureSaga() {
 }
 
 function* logoutSaga() {
-  // console.log('modules → [user.js] → function logoutSaga() { .. }')
+  // console.log('modules → [user.js] → function* logoutSaga() { .. }')
 
   try {
     yield call(api.logout)
@@ -44,7 +44,7 @@ function* logoutSaga() {
 
     Cookies.remove('accessToken')
 
-    // console.log("modules → [user.js] → function logoutSaga() { .. } → localStorage.getItem('user'): ", localStorage.getItem('user'))
+    // console.log("modules → [user.js] → function* logoutSaga() { .. } → localStorage.getItem('user'): ", localStorage.getItem('user'))
   } catch (error) {
     console.error(error)
   }
